@@ -24,9 +24,6 @@ $app = new \Slim\App();
 // Set up dependencies
 require APPLICATION_PATH . '/dependencies.php';
 
-// Register middleware
-require APPLICATION_PATH . '/middleware.php';
-
 // Register routes
 require APPLICATION_PATH . '/routes.php';
 
