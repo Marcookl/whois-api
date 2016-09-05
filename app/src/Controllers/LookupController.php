@@ -11,7 +11,7 @@ final class LookupController extends BaseController
     {
 
         $domain = $request->getParam('query');
-        $domain = str_replace(array('http://', 'https://'), '', $domain);
+        $domain = preg_replace('/^(?:https?:)?\/\//', '', $domain);
 
         $deep = $request->getParam('deep');
 
