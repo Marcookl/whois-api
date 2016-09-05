@@ -10,8 +10,10 @@ final class LookupController extends BaseController
     public function lookupAction($request, $response, $args)
     {
 
-        $domain = $request->getParam('query'); 
-        $deep = $request->getParam('deep'); 
+        $domain = $request->getParam('query');
+        $domain = preg_replace('/^(?:https?:)?\/\//', '', $domain);
+
+        $deep = $request->getParam('deep');
 
         $this->whois->deepWhois = true;
 
