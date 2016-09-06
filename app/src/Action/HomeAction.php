@@ -12,7 +12,6 @@ final class HomeAction
         ];
 
         return $response->withStatus(200)
-            ->withHeader('Content-Type', 'application/json')
             ->withJson($message);
 
     }

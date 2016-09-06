@@ -30,7 +30,7 @@ final class LookupController extends BaseController
         if($result === false || !is_array($result)) {
 
            return $response->withStatus(500)
-            ->withJson(array('error', 'Not found'));
+               ->withJson(array('error', 'Not found'));
         }
 
         unset($result['rawdata']);
@@ -41,7 +41,6 @@ final class LookupController extends BaseController
 
         $model = $this->model->toArray();
         return $response->withStatus(200)
-          ->withHeader('Content-Type', 'application/json')
-          ->withJson($model['data']);
+            ->withJson($model['data']);
     }
 }
