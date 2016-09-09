@@ -13,6 +13,9 @@ final class LookupController extends BaseController
         $domain = $request->getParam('query');
         $domain = preg_replace('/^(?:https?:)?\/\//', '', $domain);
 
+        $server = $request->getParam('server');
+        $tld = $request->getParam('tld');
+
         $deep = $request->getParam('deep');
 
         $this->whois->deepWhois = true;
@@ -23,6 +26,10 @@ final class LookupController extends BaseController
 
         if (isset($deep) && (($deep == 'false') || !$deep)) {
             $this->whois->deepWhois = false;
+        }
+
+        if(isset($server) && isset($tld)) {
+            $this->whois->useServer($tld, $server);
         }
 
         $result = $this->whois->lookup($domain);
