@@ -27,6 +27,7 @@ It fully supports IDNA (internationalized) domains names as defined in RFC3490, 
 * `:url` url of the page you want to inspect. (e.g. `google.com`)
 * `:deep` this is an optional parameter. If you just want to know if a domain is registered or not but do not care about getting the real owner information you can set:
 deep=false
+* `:server` and `tld` allow you to use a different whois server than the preconfigured or discovered one and must be used in conjuction
 The response is an json object containing the output from the whois lookup.
 
 ```json
