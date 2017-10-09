@@ -15,7 +15,7 @@
     ],
     "require": {
         "slim/slim": "^3.0",
-        "phpwhois/phpwhois": "dev-dev-fix-expiry"
+        "phpwhois/phpwhois": "dev-master"
     },
     "autoload": {
         "psr-4": {
