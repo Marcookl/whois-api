@@ -6,9 +6,16 @@
     "keywords": ["slim","framework","whois"],
     "homepage": "https://github.com/woorank/whois-api",
     "license": "MIT",
+
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/Woorank/phpwhois"
+      }
+    ],
     "require": {
         "slim/slim": "^3.0",
-        "phpwhois/phpwhois": "dev-master"
+        "phpwhois/phpwhois": "dev-dev-fix-expiry"
     },
     "autoload": {
         "psr-4": {
