@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  whois:
+    build: .
+    image: woorank/whois-api:latest
+    command: "apache2 -DFOREGROUND"
+    ports:
+      - "14760:80"
+    volumes:
+      - ./app:/var/www/html/app
