@@ -47,7 +47,6 @@ final class LookupController extends BaseController
         }
 
         $model = $this->model->toArray();
-        return $response->withStatus(200)
-            ->withJson($model['data']);
+        return $response->withJson($model['data'], 200, JSON_PARTIAL_OUTPUT_ON_ERROR);
     }
 }
