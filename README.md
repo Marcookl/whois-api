@@ -22,7 +22,7 @@ It fully supports IDNA (internationalized) domains names as defined in RFC3490, 
 
 ### analyze
 
-    curl "http://localhost/lookup?url=:url"
+    curl "http://localhost/lookup?query=:url"
 
 * `:url` url of the page you want to inspect. (e.g. `google.com`)
 * `:deep` this is an optional parameter. If you just want to know if a domain is registered or not but do not care about getting the real owner information you can set:
