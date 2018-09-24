@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "b8ccacb6d924d08046c177eef5b05542",
@@ -135,12 +135,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Woorank/phpWhois.git",
-                "reference": "ec7b102de9f6c47e4eb2c1bf20c451fc6689e75e"
+                "reference": "ed8747293aa12f55ea0d8747bc0795adb09af050"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Woorank/phpWhois/zipball/ec7b102de9f6c47e4eb2c1bf20c451fc6689e75e",
-                "reference": "ec7b102de9f6c47e4eb2c1bf20c451fc6689e75e",
+                "url": "https://api.github.com/repos/Woorank/phpWhois/zipball/ed8747293aa12f55ea0d8747bc0795adb09af050",
+                "reference": "ed8747293aa12f55ea0d8747bc0795adb09af050",
                 "shasum": ""
             },
             "require": {
@@ -190,7 +190,7 @@
             "support": {
                 "source": "https://github.com/Woorank/phpWhois/tree/master"
             },
-            "time": "2017-11-10T15:02:12+00:00"
+            "time": "2018-09-24T15:05:13+00:00"
         },
         {
             "name": "pimple/pimple",
