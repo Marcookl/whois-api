@@ -40,8 +40,6 @@ final class LookupController extends BaseController
                ->withJson(array('error', 'Not found'));
         }
 
-        unset($result['rawdata']);
-
         if(isset($result)) {
           $this->model->setInfo($result);
         }
