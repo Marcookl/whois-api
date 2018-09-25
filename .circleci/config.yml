@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  build:
+    machine:
+       docker_layer_caching: false
+    steps:
+      - checkout
+      - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run: docker build -t woorank/whois-api:v$CIRCLE_BUILD_NUM .
+
+      - deploy:
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ] || [[ "${CIRCLE_BRANCH}" =~ dryrun_.* ]]; then
+              docker push woorank/whois-api
+            fi
