@@ -40,6 +40,17 @@ final class LookupController extends BaseController
                ->withJson(array('error', 'Not found'));
         }
 
+        $minLinesExpectedInResponse = 5; 
+        $isExceededResponse = strpos(implode(' ', $result['rawdata']), 'WHOIS LIMIT EXCEEDED') !== false;
+
+        if (
+            count($result['rawdata']) < $minLinesExpectedInResponse
+            || $isExceededResponse
+        ) {
+           return $response->withStatus(429)
+               ->withJson(array('error', 'Quota exceeded'));
+        };
+
         if(isset($result)) {
           $this->model->setInfo($result);
         }
