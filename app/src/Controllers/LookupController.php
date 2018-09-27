@@ -37,18 +37,14 @@ final class LookupController extends BaseController
         if($result === false || !is_array($result)) {
 
            return $response->withStatus(500)
-               ->withJson(array('error', 'Not found'));
+               ->withJson(array('error' => 'Not found'));
         }
 
-        $minLinesExpectedInResponse = 5; 
         $isExceededResponse = strpos(implode(' ', $result['rawdata']), 'WHOIS LIMIT EXCEEDED') !== false;
 
-        if (
-            count($result['rawdata']) < $minLinesExpectedInResponse
-            || $isExceededResponse
-        ) {
+        if ($isExceededResponse) {
            return $response->withStatus(429)
-               ->withJson(array('error', 'Quota exceeded'));
+               ->withJson(array('error' => 'Quota exceeded'));
         };
 
         if(isset($result)) {
