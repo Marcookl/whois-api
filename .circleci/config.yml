@@ -13,6 +13,6 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ] || [[ "${CIRCLE_BRANCH}" =~ dryrun_.* ]]; then
               docker push woorank/whois-api              
-              docker tag woorank/whois-api::v$CIRCLE_BUILD_NUM docker.pkg.github.com/woorank/whois-api/whois-api:v$CIRCLE_BUILD_NUM
+              docker tag woorank/whois-api:v$CIRCLE_BUILD_NUM docker.pkg.github.com/woorank/whois-api/whois-api:v$CIRCLE_BUILD_NUM
               docker push docker.pkg.github.com/woorank/whois-api/whois-api:v$CIRCLE_BUILD_NUM
             fi
