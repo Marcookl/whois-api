@@ -6,10 +6,13 @@ jobs:
     steps:
       - checkout
       - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run: docker login docker.pkg.github.com -u $GITHUB_USER -p $GITHUB_PASS
       - run: docker build -t woorank/whois-api:v$CIRCLE_BUILD_NUM .
 
       - deploy:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ] || [[ "${CIRCLE_BRANCH}" =~ dryrun_.* ]]; then
-              docker push woorank/whois-api
+              docker push woorank/whois-api              
+              docker tag woorank/whois-api::v$CIRCLE_BUILD_NUM docker.pkg.github.com/woorank/whois-api/whois-api:v$CIRCLE_BUILD_NUM
+              docker push docker.pkg.github.com/woorank/whois-api/whois-api:v$CIRCLE_BUILD_NUM
             fi
